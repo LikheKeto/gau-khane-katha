@@ -44,6 +44,35 @@
 	});
 </script>
 
+<svelte:head>
+	<title>{t.randomRiddleTitle} - {t.siteName}</title>
+	<meta name="description" content={t.metaDescriptionRandom} />
+	<meta property="og:title" content="{t.randomRiddleTitle} - {t.siteName}" />
+	<meta property="og:description" content={t.metaDescriptionRandom} />
+	<meta property="og:type" content="website" />
+	<meta name="twitter:title" content="{t.randomRiddleTitle} - {t.siteName}" />
+	<meta name="twitter:description" content={t.metaDescriptionRandom} />
+	
+	<!-- Random riddle structured data -->
+	{@html `<script type="application/ld+json">
+		${JSON.stringify({
+			'@context': 'https://schema.org',
+			'@type': 'WebPage',
+			'name': t.randomRiddleTitle,
+			'description': t.metaDescriptionRandom,
+			'mainEntity': {
+				'@type': 'Quiz',
+				'name': t.randomRiddleTitle,
+				'description': t.playUnlimited,
+				'about': {
+					'@type': 'Thing',
+					'name': 'Nepali Culture'
+				}
+			}
+		})}
+	</script>`}
+</svelte:head>
+
 <div class="pb-8">
 	<div class="text-center mb-8">
 		<h2 class="text-3xl md:text-4xl text-slate-800 dark:text-slate-100 mb-2">{t.randomRiddleTitle}</h2>

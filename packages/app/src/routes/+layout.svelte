@@ -4,15 +4,82 @@
 	import AdSlot from '$lib/components/AdSlot.svelte';
 	import { language } from '$lib/stores';
 	import { translations } from '$lib/i18n';
+	import { page } from '$app/stores';
 
 	let { children } = $props();
 	
 	const t = $derived(translations[$language]);
+	
+	// Get current URL for canonical and Open Graph
+	const currentUrl = $derived($page.url.href);
+	const baseUrl = $page.url.origin;
+	
+	// Structured data for the website
+	const websiteSchema = $derived({
+		'@context': 'https://schema.org',
+		'@type': 'WebSite',
+		'name': 'Gau Khane Katha',
+		'alternateName': 'गाउँखाने कथा',
+		'url': baseUrl,
+		'description': 'Traditional Nepali riddles game with 2070+ riddles. Play daily riddles, collect villages, and test your knowledge.',
+		'inLanguage': ['en', 'ne'],
+		'potentialAction': {
+			'@type': 'SearchAction',
+			'target': {
+				'@type': 'EntryPoint',
+				'urlTemplate': `${baseUrl}/?q={search_term_string}`
+			},
+			'query-input': 'required name=search_term_string'
+		}
+	});
+	
+	const organizationSchema = $derived({
+		'@context': 'https://schema.org',
+		'@type': 'Organization',
+		'name': 'Gau Khane Katha',
+		'url': baseUrl,
+		'logo': `${baseUrl}/logo.png`,
+		'sameAs': [],
+		'description': 'Preserving and promoting traditional Nepali riddles (Gau Khane Katha) through digital media.'
+	});
 </script>
 
 <svelte:head>
 	<title>{t.siteName}</title>
-	<meta name="description" content={t.testYourKnowledge} />
+	<meta name="description" content={t.metaDescription} />
+	
+	<!-- Canonical URL -->
+	<link rel="canonical" href={currentUrl} />
+	
+	<!-- Alternate language versions -->
+	<link rel="alternate" hreflang="en" href={currentUrl} />
+	<link rel="alternate" hreflang="ne" href={currentUrl} />
+	<link rel="alternate" hreflang="x-default" href={currentUrl} />
+	
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content={currentUrl} />
+	<meta property="og:title" content={t.ogTitle} />
+	<meta property="og:description" content={t.ogDescription} />
+	<meta property="og:image" content="{baseUrl}/og-image.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta property="og:site_name" content="Gau Khane Katha" />
+	<meta property="og:locale" content={$language === 'ne' ? 'ne_NP' : 'en_US'} />
+	<meta property="og:locale:alternate" content={$language === 'ne' ? 'en_US' : 'ne_NP'} />
+	
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:url" content={currentUrl} />
+	<meta name="twitter:title" content={t.ogTitle} />
+	<meta name="twitter:description" content={t.ogDescription} />
+	<meta name="twitter:image" content="{baseUrl}/og-image.png" />
+	
+	<!-- Structured Data -->
+	{@html `<script type="application/ld+json">${JSON.stringify(websiteSchema)}</script>`}
+	{@html `<script type="application/ld+json">${JSON.stringify(organizationSchema)}</script>`}
+	
+	<!-- Google AdSense -->
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1164106867271009"
      crossorigin="anonymous"></script>
 </svelte:head>

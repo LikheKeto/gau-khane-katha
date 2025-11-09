@@ -1,3 +1,10 @@
-# allow crawling everything by default
+# Gau Khane Katha - Nepali Riddle Game
+# Allow crawling of all content
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap location
+Sitemap: https://gaukhane.com/sitemap.xml
+
+# Crawl delay (optional - adjust based on server capacity)
+Crawl-delay: 1

@@ -59,7 +59,15 @@ export const translations = {
 		uncommon: 'Uncommon',
 		rare: 'Rare',
 		epic: 'Epic',
-		legendary: 'Legendary'
+		legendary: 'Legendary',
+		// SEO Meta descriptions
+		metaDescription: 'Play traditional Nepali riddles (Gau Khane Katha) daily! Test your knowledge with 2070+ riddles, collect villages, and enjoy this cultural brain teaser game.',
+		metaDescriptionDaily: 'Solve today\'s Nepali riddle (Gau Khane Katha)! A new brain teaser every day. Test your knowledge of Nepali culture and language.',
+		metaDescriptionRandom: 'Play unlimited Nepali riddles (Gau Khane Katha)! Challenge yourself with random brain teasers from 2070+ traditional riddles.',
+		metaDescriptionAbout: 'Learn about Gau Khane Katha - traditional Nepali riddles. Discover the cultural heritage and purpose behind this brain teaser game.',
+		metaDescriptionVillages: 'Track your Gau Khane Katha collection! See all 24 Nepali villages you can win by solving riddles correctly.',
+		ogTitle: 'Gau Khane Katha - Traditional Nepali Riddles',
+		ogDescription: 'Play daily Nepali riddles, collect villages, and test your knowledge with 2070+ traditional Gau Khane Katha brain teasers!',
 	},
 	ne: {
 		siteName: 'गाउँखाने कथा',
@@ -121,7 +129,15 @@ export const translations = {
 		uncommon: 'असामान्य',
 		rare: 'दुर्लभ',
 		epic: 'महाकाव्य',
-		legendary: 'पौराणिक'
+		legendary: 'पौराणिक',
+		// SEO Meta descriptions
+		metaDescription: 'हरेक दिन नेपाली गाउँखाने कथा खेल्नुहोस्! २०७०+ कथाहरू संग आफ्नो ज्ञान परीक्षण गर्नुहोस्, गाउँहरू जम्मा गर्नुहोस् र यो सांस्कृतिक खेलको मज्जा लिनुहोस्।',
+		metaDescriptionDaily: 'आजको नेपाली गाउँखाने कथा समाधान गर्नुहोस्! हरेक दिन नयाँ कथा। नेपाली संस्कृति र भाषाको आफ्नो ज्ञान परीक्षण गर्नुहोस्।',
+		metaDescriptionRandom: 'असीमित नेपाली गाउँखाने कथा खेल्नुहोस्! २०७०+ परम्परागत कथाहरूबाट अनियमित कथाहरू संग आफूलाई चुनौती दिनुहोस्।',
+		metaDescriptionAbout: 'गाउँखाने कथा बारेमा जान्नुहोस् - परम्परागत नेपाली कथाहरू। यो खेलको पछाडिको सांस्कृतिक विरासत र उद्देश्य पत्ता लगाउनुहोस्।',
+		metaDescriptionVillages: 'आफ्नो गाउँखाने कथा संग्रह ट्र्याक गर्नुहोस्! सही जवाफ दिएर जित्न सकिने २४ नेपाली गाउँहरू हेर्नुहोस्।',
+		ogTitle: 'गाउँखाने कथा - परम्परागत नेपाली कथाहरू',
+		ogDescription: 'दैनिक नेपाली गाउँखाने कथा खेल्नुहोस्, गाउँहरू संकलन गर्नुहोस्, र २०७०+ परम्परागत कथाहरू संग आफ्नो ज्ञान परीक्षण गर्नुहोस्!',
 	}
 } as const;
 

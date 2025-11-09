@@ -24,6 +24,31 @@
 	});
 </script>
 
+<svelte:head>
+	<title>{t.myVillages} - {t.siteName}</title>
+	<meta name="description" content={t.metaDescriptionVillages} />
+	<meta property="og:title" content="{t.myVillages} - {t.siteName}" />
+	<meta property="og:description" content={t.metaDescriptionVillages} />
+	<meta property="og:type" content="website" />
+	<meta name="twitter:title" content="{t.myVillages} - {t.siteName}" />
+	<meta name="twitter:description" content={t.metaDescriptionVillages} />
+	
+	<!-- Villages collection structured data -->
+	{@html `<script type="application/ld+json">
+		${JSON.stringify({
+			'@context': 'https://schema.org',
+			'@type': 'CollectionPage',
+			'name': t.myVillages,
+			'description': t.metaDescriptionVillages,
+			'about': {
+				'@type': 'Thing',
+				'name': 'Nepali Villages Collection',
+				'description': 'Collect 24 Nepali villages by solving riddles correctly'
+			}
+		})}
+	</script>`}
+</svelte:head>
+
 <div class="pb-8">
 	<div class="text-center mb-8">
 		<h2 class="text-3xl md:text-4xl text-slate-800 dark:text-slate-100 mb-4">{t.myVillages}</h2>

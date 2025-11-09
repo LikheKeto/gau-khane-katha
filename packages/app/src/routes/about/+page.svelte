@@ -5,6 +5,31 @@
 	const t = $derived(translations[$language]);
 </script>
 
+<svelte:head>
+	<title>{t.aboutTitle} - {t.siteName}</title>
+	<meta name="description" content={t.metaDescriptionAbout} />
+	<meta property="og:title" content="{t.aboutTitle} - {t.siteName}" />
+	<meta property="og:description" content={t.metaDescriptionAbout} />
+	<meta property="og:type" content="website" />
+	<meta name="twitter:title" content="{t.aboutTitle} - {t.siteName}" />
+	<meta name="twitter:description" content={t.metaDescriptionAbout} />
+	
+	<!-- About page structured data -->
+	{@html `<script type="application/ld+json">
+		${JSON.stringify({
+			'@context': 'https://schema.org',
+			'@type': 'AboutPage',
+			'name': t.aboutTitle,
+			'description': t.metaDescriptionAbout,
+			'about': {
+				'@type': 'Thing',
+				'name': 'Gau Khane Katha',
+				'description': t.aboutIntro
+			}
+		})}
+	</script>`}
+</svelte:head>
+
 <div class="max-w-[800px] pb-8">
 	<h2 class="text-3xl md:text-4xl text-slate-800 dark:text-slate-100 text-center mb-8">{t.aboutTitle}</h2>
 

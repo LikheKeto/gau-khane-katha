@@ -49,6 +49,35 @@
 	}
 </script>
 
+<svelte:head>
+	<title>{t.todaysRiddle} - {t.siteName}</title>
+	<meta name="description" content={t.metaDescriptionDaily} />
+	<meta property="og:title" content="{t.todaysRiddle} - {t.siteName}" />
+	<meta property="og:description" content={t.metaDescriptionDaily} />
+	<meta property="og:type" content="website" />
+	<meta name="twitter:title" content="{t.todaysRiddle} - {t.siteName}" />
+	<meta name="twitter:description" content={t.metaDescriptionDaily} />
+	
+	<!-- Riddle-specific structured data -->
+	{@html `<script type="application/ld+json">
+		${JSON.stringify({
+			'@context': 'https://schema.org',
+			'@type': 'WebPage',
+			'name': t.todaysRiddle,
+			'description': t.metaDescriptionDaily,
+			'mainEntity': {
+				'@type': 'Quiz',
+				'name': t.todaysRiddle,
+				'description': data.riddle.riddle,
+				'about': {
+					'@type': 'Thing',
+					'name': 'Nepali Culture'
+				}
+			}
+		})}
+	</script>`}
+</svelte:head>
+
 <div class="pb-8">
 	<div class="text-center mb-8">
 		<h2 class="text-3xl md:text-4xl text-slate-800 dark:text-slate-100 mb-2">{t.todaysRiddle}</h2>
