@@ -22,12 +22,12 @@
 	
 	<!-- Top Banner Ad -->
 	<div class="flex justify-center bg-white dark:bg-slate-800 py-4 border-b border-slate-200 dark:border-slate-700">
-		<AdSlot id="top-banner" size="728x90" />
+		<AdSlot id="top-banner" size="728x90" adSlot="4216938024" />
 	</div>
 	
 	<div class="grid grid-cols-1 xl:grid-cols-[300px_1fr_300px] gap-8 max-w-[1400px] w-full mx-auto px-4 md:px-8 py-8 flex-1">
 		<aside class="hidden xl:block sticky top-8 h-fit">
-			<AdSlot id="sidebar-top" size="300x250" />
+			<AdSlot id="sidebar-top" size="300x250" adSlot="2362475462" />
 		</aside>
 		
 		<main class="max-w-[800px] min-h-[500px] mx-auto xl:mx-0 w-full">
@@ -35,13 +35,13 @@
 		</main>
 		
 		<aside class="hidden xl:block sticky top-8 h-fit">
-			<AdSlot id="sidebar-right" size="300x600" />
+			<AdSlot id="sidebar-right" size="300x600" adSlot="7944715457" />
 		</aside>
 	</div>
 	
 	<!-- Sidebar ad for tablet/mobile -->
 	<div class="xl:hidden max-w-[300px] mx-auto px-4 pb-8">
-		<AdSlot id="sidebar-mobile" size="300x250" />
+		<AdSlot id="sidebar-mobile" size="300x250" adSlot="2362475462" />
 	</div>
 	
 	<footer class="bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-center py-8 mt-16 border-t border-slate-200 dark:border-slate-700">

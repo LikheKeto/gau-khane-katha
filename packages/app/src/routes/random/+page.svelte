@@ -90,6 +90,6 @@
 	{/if}
 	<!-- Mid-content Ad -->
 	<div class="my-12 hidden md:flex justify-center">
-		<AdSlot id="random-mid" size="728x90" />
+		<AdSlot id="random-mid" size="728x90" adSlot="5318552110" />
 	</div>
 </div>

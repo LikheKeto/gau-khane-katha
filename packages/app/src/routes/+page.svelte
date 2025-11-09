@@ -103,7 +103,7 @@
 
 	<!-- Mid-content Ad -->
 	<div class="my-12 flex justify-center">
-		<AdSlot id="mid-content" size="728x90" />
+		<AdSlot id="mid-content" size="728x90" adSlot="4216938024" />
 	</div>
 
 	<div class="text-center mt-12 p-6 md:p-8 bg-white dark:bg-slate-800 rounded-xl shadow-md border border-slate-200 dark:border-slate-700">
