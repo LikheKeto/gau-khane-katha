@@ -1,0 +1,5 @@
+# PDF text extraction
+PyPDF2>=3.0.0
+
+# Convert legacy Nepali fonts to Unicode
+npttf2utf
